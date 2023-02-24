@@ -19,8 +19,12 @@ export const GlobalStyle = createGlobalStyle<{ theme: themeType }>`
     color: ${({ theme }) => theme.text};
   }
 
-  body, button {
-    font-size: 1.5rem; 
+  body {
+    font-size: 1.3rem;
+    
+    @media (min-width: 768px) {
+      font-size: 1.5rem;
+    }
   }
   
   li {

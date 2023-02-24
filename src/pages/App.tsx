@@ -1,8 +1,10 @@
+import Header from 'components/molecules/Header/Header';
 import GitHubUserSearch from 'components/organisms/GitHubUserSearch/GitHubUserSearch';
 import { GlobalStyle } from 'lib/styles/GlobalStyle';
 import { darkTheme, lightTheme } from 'lib/styles/theme';
 import { createContext, useState } from 'react';
-import styled, { ThemeProvider } from 'styled-components';
+import { ThemeProvider } from 'styled-components';
+import { AppContainer, Wrapper } from './App.styles';
 
 export const DarkModeContext = createContext({
 	darkMode: true,
@@ -20,21 +22,15 @@ const App = () => {
 		<DarkModeContext.Provider value={{ darkMode, toggleDarkMode }}>
 			<ThemeProvider theme={darkMode ? darkTheme : lightTheme}>
 				<GlobalStyle />
-				<Wrapper>
-					<GitHubUserSearch />
-				</Wrapper>
+				<AppContainer>
+					<Wrapper>
+						<Header />
+						<GitHubUserSearch />
+					</Wrapper>
+				</AppContainer>
 			</ThemeProvider>
 		</DarkModeContext.Provider>
 	);
 };
-
-export const Wrapper = styled.main`
-	width: 100%;
-	min-height: 100vh;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	padding: 1.5rem;
-`;
 
 export default App;
