@@ -4,13 +4,17 @@ export const Wrapper = styled.form`
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	gap: 2rem;
+	gap: 1rem;
 
-	padding: 0.75em;
+	padding: 0.75rem;
 	border-radius: 15px;
 
 	background-color: ${({ theme }) => theme.foreground};
 	box-shadow: 0 5px 15px -10px rgba(0, 0, 0, 0.25);
+
+	@media (min-width: 768px) {
+		padding-left: 2rem;
+	}
 `;
 
 export const SearchInput = styled.div`
@@ -18,7 +22,7 @@ export const SearchInput = styled.div`
 
 	display: flex;
 	align-items: center;
-	gap: 1.25rem;
+	gap: 1rem;
 `;
 
 export const StyledInput = styled.input`
@@ -30,9 +34,14 @@ export const StyledInput = styled.input`
 	outline: none;
 
 	background-color: transparent;
-	color: ${({ theme }) => theme.text};
+	color: ${({ theme }) => theme.inputFocusText};
+	font-size: 1.3rem;
 
 	&::placeholder {
-		color: ${({ theme }) => theme.inputFocusText};
+		color: ${({ theme }) => theme.text};
+	}
+
+	@media (min-width: 768px) {
+		font-size: 1.8rem;
 	}
 `;

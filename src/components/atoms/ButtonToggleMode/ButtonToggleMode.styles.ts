@@ -3,12 +3,12 @@ import styled from 'styled-components';
 export const Wrapper = styled.button`
 	display: inline-flex;
 	align-items: center;
-	gap: 2rem;
+	gap: 1.5rem;
 
+	border: none;
 	padding: 0.5em;
 
 	background-color: transparent;
-	border: none;
 
 	font-size: 1.3rem;
 	font-weight: bold;
