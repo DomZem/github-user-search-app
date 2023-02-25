@@ -1,5 +1,5 @@
 import Header from 'components/molecules/Header/Header';
-import GitHubUserSearch from 'components/organisms/GitHubUserSearch/GitHubUserSearch';
+import UserSearch from 'components/organisms/UserSearch/UserSearch';
 import { GlobalStyle } from 'lib/styles/GlobalStyle';
 import { darkTheme, lightTheme } from 'lib/styles/theme';
 import { createContext, useState } from 'react';
@@ -25,7 +25,7 @@ const App = () => {
 				<AppContainer>
 					<Wrapper>
 						<Header />
-						<GitHubUserSearch />
+						<UserSearch />
 					</Wrapper>
 				</AppContainer>
 			</ThemeProvider>
