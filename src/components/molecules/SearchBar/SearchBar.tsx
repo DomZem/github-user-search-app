@@ -10,10 +10,10 @@ type SearchBarProps = {
 
 const SearchBar: FC<SearchBarProps> = ({ handleSearchUser }) => {
 	return (
-		<Wrapper onSubmit={handleSearchUser}>
+		<Wrapper as='form' onSubmit={handleSearchUser}>
 			<SearchInput>
 				<SearchIcon />
-				<StyledInput type='text' name='username' id='username' placeholder='Search GitHub username…' />
+				<StyledInput type='text' name='username' id='username' placeholder='Search GitHub username…' autoComplete='off' />
 			</SearchInput>
 			<PrimaryButton type='submit'>Search</PrimaryButton>
 		</Wrapper>

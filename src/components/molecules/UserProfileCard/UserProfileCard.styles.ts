@@ -1,16 +1,13 @@
+import { ViewWrapper } from 'components/atoms/ViewWrapper/ViewWrapper';
 import styled from 'styled-components';
 
-export const Wrapper = styled.div`
+export const Wrapper = styled(ViewWrapper)`
 	display: grid;
 	grid-template-columns: auto repeat(3, 1fr);
 	grid-template-rows: repeat(4, auto);
 	gap: 2.5rem;
 
 	padding: 2.5rem;
-	border-radius: 15px;
-
-	background-color: ${({ theme }) => theme.foreground};
-	box-shadow: 0 5px 15px -10px rgba(0, 0, 0, 0.3);
 
 	@media (min-width: 768px) {
 		padding: 3.5rem;

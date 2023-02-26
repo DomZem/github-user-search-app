@@ -3,11 +3,12 @@ import SearchBar from 'components/molecules/SearchBar/SearchBar';
 import UserProfileCard from 'components/molecules/UserProfileCard/UserProfileCard';
 import { userDataType } from 'lib/types/userData';
 import { useEffect, useState } from 'react';
-import { Wrapper } from './UserSearch.styles';
+import { ErrorMessage, Wrapper } from './UserSearch.styles';
 
 const UserSearch = () => {
 	const [nickName, setNickname] = useState('');
 	const [userData, setUserData] = useState<userDataType>();
+	const [isError, setIsError] = useState(false);
 
 	const handleSearchUser = (e: React.FormEvent<HTMLFormElement>) => {
 		e.preventDefault();
@@ -20,11 +21,14 @@ const UserSearch = () => {
 
 		(async () => {
 			try {
+				setIsError(false);
+
 				const request = await fetch(`${COUNTRIES_API_URL}/${nickName}`);
 				const data = await request.json();
+
 				setUserData(data);
 			} catch (err) {
-				console.log(err);
+				setIsError(true);
 			}
 		})();
 	}, [nickName]);
@@ -32,7 +36,15 @@ const UserSearch = () => {
 	return (
 		<Wrapper>
 			<SearchBar handleSearchUser={handleSearchUser} />
-			{userData && <UserProfileCard userData={userData} />}
+			{isError ? (
+				<ErrorMessage>
+					Sorry, unexpected error from server. <span>We are working on fixing the problem. Be back soon.</span>
+				</ErrorMessage>
+			) : userData?.name ? (
+				<UserProfileCard userData={userData} />
+			) : (
+				userData !== undefined && <ErrorMessage>No results</ErrorMessage>
+			)}
 		</Wrapper>
 	);
 };

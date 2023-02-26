@@ -1,16 +1,13 @@
+import { ViewWrapper } from 'components/atoms/ViewWrapper/ViewWrapper';
 import styled from 'styled-components';
 
-export const Wrapper = styled.form`
+export const Wrapper = styled(ViewWrapper)`
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 	gap: 1rem;
 
 	padding: 0.75rem;
-	border-radius: 15px;
-
-	background-color: ${({ theme }) => theme.foreground};
-	box-shadow: 0 5px 15px -10px rgba(0, 0, 0, 0.25);
 
 	@media (min-width: 768px) {
 		padding-left: 2rem;

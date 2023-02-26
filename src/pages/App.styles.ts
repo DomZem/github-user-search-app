@@ -16,6 +16,7 @@ export const AppContainer = styled.main`
 export const Wrapper = styled.div`
 	max-width: 745px;
 	width: 100%;
+
 	display: flex;
 	flex-direction: column;
 	gap: 3.6rem;

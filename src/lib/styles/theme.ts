@@ -4,6 +4,7 @@ export const lightTheme: themeType = {
 	foreground: '#FEFEFE',
 	header: '#2B3442',
 	text: '#4B6A9B',
+	error: '#F74646',
 	blue: '#0079FF',
 
 	toggleButton: '#697C9A',
@@ -21,6 +22,7 @@ export const darkTheme: themeType = {
 	foreground: '#1E2A47',
 	header: '#FFFFFF',
 	text: '#FFFFFF',
+	error: '#F74646',
 	blue: '#0079FF',
 
 	toggleButton: '#FFFFFF',

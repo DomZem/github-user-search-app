@@ -1,10 +1,9 @@
 export type themeType = {
 	background: string;
-	text: string;
-
 	foreground: string;
 	header: string;
-
+	text: string;
+	error: string;
 	blue: string;
 
 	toggleButton: string;
