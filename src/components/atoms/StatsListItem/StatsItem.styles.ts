@@ -11,7 +11,7 @@ export const Wrapper = styled.div`
 	}
 `;
 
-export const Title = styled.p`
+export const Title = styled.h4`
 	font-size: 1.1rem;
 	font-weight: 400;
 

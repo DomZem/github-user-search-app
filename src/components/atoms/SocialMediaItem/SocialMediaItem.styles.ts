@@ -13,5 +13,11 @@ export const Wrapper = styled.li<{ isNoText: boolean }>`
 
 	a {
 		color: ${({ theme }) => theme.text};
+
+		@media (min-width: 1024px) {
+			&:hover {
+				text-decoration: underline;
+			}
+		}
 	}
 `;

@@ -12,6 +12,15 @@ export const Wrapper = styled(ViewWrapper)`
 	@media (min-width: 768px) {
 		padding-left: 2rem;
 	}
+
+	@media (min-width: 1024px) {
+		transition: box-shadow 0.2s linear;
+
+		&:focus-within,
+		&:hover {
+			box-shadow: 0px 5px 15px -5px rgba(0, 0, 0, 0.35);
+		}
+	}
 `;
 
 export const SearchInput = styled.div`

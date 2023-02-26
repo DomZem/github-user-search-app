@@ -51,8 +51,8 @@ export const ProfileIdentify = styled.div`
 `;
 
 export const Name = styled.h2`
-	font-weight: bold;
 	font-size: 1.6rem;
+	font-weight: bold;
 	color: ${({ theme }) => theme.header};
 
 	@media (min-width: 768px) {
